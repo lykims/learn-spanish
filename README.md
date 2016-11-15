@@ -1,24 +1,42 @@
-# README
+# Learning Language - Spanish
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Objective
 
-Things you may want to cover:
+This website was created to learn Spanish vocabulary faster in a fun way and new technologies at the same time.
 
-* Ruby version
+## Development Tools
 
-* System dependencies
+* Ruby on Rails
 
-* Configuration
+## Production Site
 
-* Database creation
 
-* Database initialization
+## Getting started
 
-* How to run the test suite
+To get started with the app, clone the repo and then install the needed gems:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ bundle install --without production
+```
 
-* Deployment instructions
+Next, migrate the database:
 
-* ...
+```
+$ rails db:migrate
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
+## Resources
+* <https://www.railstutorial.org/book>
+* <http://docs.railsbridge.org>
