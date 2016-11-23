@@ -53,6 +53,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# CSS libraries
 gem 'bootstrap-sass', '3.3.7'
 gem 'font-awesome-sass', '~> 4.7.0'
+
+# Detect active link and add CSS class
 gem "active_link_to"
+
+# Hash password
+gem 'bcrypt',         '3.1.11'
