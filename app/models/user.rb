@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     before_save { self.username = username.downcase }
 
-    VALID_NAME_REGEX = /\A[a-zàâçéèêëîïôûùüÿñæœ]+\z/i
+    VALID_NAME_REGEX = /\A[a-zàâçéèêëîïôûùüÿñæœ ,.'-]+\z/i
     validates :name, presence: true, length: { maximum: 50 },
                     format: { with: VALID_NAME_REGEX }
 
