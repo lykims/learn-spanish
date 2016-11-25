@@ -1,0 +1,20 @@
+<% provide(:title, "Log In") %>
+<section>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <div class="form-container">
+                <h1>Log In</h1>
+                <%= form_for(:session, url: login_path, :html => { :class => "form-horizontal login-register"} ) do |f| %>
+
+                    <%= f.text_field :username, class: "form-input form-control", placeholder: "Username"  %>
+
+                    <%= f.password_field :password, class: "form-input form-control", placeholder: "Password" %>
+
+                    <%= f.submit "Log In", class: "btn btn-primary" %>
+
+                    <p class="message">Not registered? <%= link_to "Create an account", signup_path%></p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
