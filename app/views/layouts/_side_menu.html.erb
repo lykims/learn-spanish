@@ -43,6 +43,18 @@
                     <div class="title">Help</div>
                 <% end %>
             </li>
+            <li class="hidden-sm hidden-md hidden-lg">
+                <%= active_link_to user_path(@user), :action => 'go' do %>
+                    <div class="icon"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i></div>
+                    <div class="title"><%= @user.name %></div>
+                <% end %>
+            </li>
+            <li class="hidden-sm hidden-md hidden-lg">
+                <%= active_link_to logout_path, method: "delete", :action => 'go' do %>
+                    <div class="icon"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i></div>
+                    <div class="title">Log Out</div>
+                <% end %>
+            </li>
         </ul>
     </div>
 </nav>

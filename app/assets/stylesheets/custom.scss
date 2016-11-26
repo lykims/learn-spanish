@@ -3,11 +3,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url('//fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,400');
-
-$primary: #D44E3D;
-$primary-light: #ED6D5C;
-$background-color: #F5F5F5;
-$dark-gray: #333333;
+@import "variables";
 
 html, body {
     width: 100%;
@@ -19,101 +15,16 @@ body {
     background-color: $background-color;
 }
 
+.splash {
+  background-image: image-url("unsplash-nvzvOPQW0gc-bench-accounting.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .page-wrapper {
     min-height: 100%;
     position: relative;
-}
-
-.sidebar {
-    background-color: $primary;
-
-    .sidebar-nav {
-        .navbar-collapse {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .nav {
-            li {
-                a.active {
-                    background: rgba(255, 255, 255, 0.05);
-
-                    .icon {
-                        color: $dark-gray;
-                    }
-
-                    .title {
-                        color: $dark-gray;
-                    }
-                }
-
-                a {
-                    &:focus {
-                        background: none;
-                    }
-
-                    &:hover {
-                        background: none;
-
-                        .icon {
-                            color: $dark-gray;
-                        }
-
-                        .title {
-                            color: $dark-gray;
-                        }
-                    }
-
-                    .icon {
-                        float: left;
-                        color: #FFFFFF;
-                    }
-
-                    .title {
-                        color: #FFFFFF;
-
-                        &:before {
-                            content: " ";
-                            padding-left: 5px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-.navbar-default {
-    background-color: $dark-gray;
-    border: none;
-
-    .navbar-brand {
-        color: #FFFFFF;
-
-        &:focus {
-            color: #FFFFFF;
-        }
-
-        &:hover {
-            color: #777777;
-        }
-    }
-
-    .navbar-nav {
-        li {
-            a {
-                color: #FFFFFF;
-
-                &:focus {
-                    color: #FFFFFF;
-                }
-
-                &:hover {
-                    color: #777777;
-                }
-            }
-        }
-    }
 }
 
 .main {
@@ -125,127 +36,6 @@ body {
     bottom: 0;
     width: 100%;
     height: 50px;
-}
-
-/* CSS Animations */
-@keyframes "login" {
-    0% {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-        filter: alpha(opacity=0);
-        opacity: 0;
-        margin-top: 30px;
-    }
-    100% {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-        filter: alpha(opacity=100);
-        opacity: 1;
-        margin-top: 0px;
-    }
-}
-
-@-moz-keyframes login {
-    0% {
-        filter: alpha(opacity=0);
-        opacity: 0;
-        margin-top: 30px;
-    }
-    100% {
-        filter: alpha(opacity=100);
-        opacity: 1;
-        margin-top: 0px;
-    }
-}
-
-@-webkit-keyframes "login" {
-    0% {
-        filter: alpha(opacity=0);
-        opacity: 0;
-        margin-top: 30px;
-    }
-    100% {
-        filter: alpha(opacity=100);
-        opacity: 1;
-        margin-top: 0px;
-    }
-}
-
-@-ms-keyframes "login" {
-    0% {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-        filter: alpha(opacity=0);
-        opacity: 0;
-        margin-top: 30px;
-    }
-    100% {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-        filter: alpha(opacity=100);
-        opacity: 1;
-        margin-top: 0px;
-    }
-}
-
-@-o-keyframes "login" {
-    0% {
-        filter: alpha(opacity=0);
-        opacity: 0;
-        margin-top: 30px;
-    }
-    100% {
-        filter: alpha(opacity=100);
-        opacity: 1;
-        margin-top: 0px;
-    }
-}
-
-
-
-
-.form-container {
-    text-align: center;
-    min-height: 700px;
-
-    .login-register {
-        border-radius: 3px;
-        background-color: #FFFFFF;
-        max-width: 400px;
-        padding: 30px;
-        margin: 0 auto;
-
-        -webkit-animation: login 1s ease-in-out;
-        -moz-animation: login 1s ease-in-out;
-        -ms-animation: login 1s ease-in-out;
-        -o-animation: login 1s ease-in-out;
-        animation: login 1s ease-in-out;
-
-        input {
-            outline: 0;
-            width: 100%;
-            border: 0;
-            margin: 0 0 15px;
-            padding: 15px;
-            border-radius: 3px;
-            box-sizing: border-box;
-            -webkit-transition: all .1s ease-in-out;
-            -moz-transition: all .1s ease-in-out;
-            -o-transition: all .1s ease-in-out;
-            -ms-transition: all .1s ease-in-out;
-            transition: all .1s ease-in-out;
-        }
-
-        input.form-control {
-            height: auto !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-        }
-
-        input.form-input {
-            background: $background-color;
-        }
-    }
-}
-
-.flash-messages {
-    padding-top: 40px;
 }
 
 a {
@@ -266,6 +56,130 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .center {
   text-align: center;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+/* CSS Animations */
+@keyframes "login" {
+    0% {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        margin-top: 10%;
+    }
+    100% {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100);
+        opacity: 1;
+        margin-top: 5%;
+    }
+}
+
+@-moz-keyframes login {
+    0% {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        margin-top: 10%;
+    }
+    100% {
+        filter: alpha(opacity=100);
+        opacity: 1;
+        margin-top: 5%;
+    }
+}
+
+@-webkit-keyframes "login" {
+    0% {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        margin-top: 10%;
+    }
+    100% {
+        filter: alpha(opacity=100);
+        opacity: 1;
+        margin-top: 5%;
+    }
+}
+
+@-ms-keyframes "login" {
+    0% {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        opacity: 0;
+        margin-top: 10%;
+    }
+    100% {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100);
+        opacity: 1;
+        margin-top: 5%;
+    }
+}
+
+@-o-keyframes "login" {
+    0% {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        margin-top: 10%;
+    }
+    100% {
+        filter: alpha(opacity=100);
+        opacity: 1;
+        margin-top: 5%;
+    }
+}
+
+.goto-container {
+    padding-top: 40px;
+}
+
+.login-register-form {
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    margin: 5% auto 5% auto;
+
+    text-align: center;
+    max-width: 400px;
+
+    -webkit-animation: login 1s ease-in-out;
+    -moz-animation: login 1s ease-in-out;
+    -ms-animation: login 1s ease-in-out;
+    -o-animation: login 1s ease-in-out;
+    animation: login 1s ease-in-out;
+
+    input {
+        outline: 0;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        -webkit-transition: all .1s ease-in-out;
+        -moz-transition: all .1s ease-in-out;
+        -o-transition: all .1s ease-in-out;
+        -ms-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+    }
+
+    input.form-control {
+        position: relative;
+        height: auto !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    input.form-input {
+        background: $background-color;
+
+        &:focus {
+            background: $background-color;
+        }
+    }
 }
 
 .btn {
@@ -290,90 +204,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     }
 }
 
-.form-horizontal > div {
-    margin-bottom: 25px;
-}
-
-.no-margin {
-    margin: 0 !important;
+.jumbotron {
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 768px) {
-    .sidebar.collapse {
-        display: block !important;
-    }
-
-    .sidebar {
-        width: 150px;
-        padding-top: 60px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-height: 100%;
-        z-index: 810;
-
-        .sidebar-nav {
-            .nav {
-                li {
-                    a {
-
-                        .icon {
-                            float: none;
-                            background-color: rgba(255, 255, 255, 0.15);
-                            display: -ms-flexbox;
-                            display: flex;
-                            -ms-flex-direction: row;
-                            flex-direction: row;
-                            -ms-flex-wrap: nowrap;
-                            flex-wrap: nowrap;
-                            -ms-flex-align: center;
-                            align-items: center;
-                            -ms-flex-pack: center;
-                            justify-content: center;
-                            display: block;
-                            margin: 0 auto;
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            margin-bottom: 0.3em;
-
-                            i.fa {
-                                width: 100%;
-                                height: 100%;
-                                font-size: 1.5em;
-                                display: -ms-flexbox;
-                                display: flex;
-                                -ms-flex-direction: row;
-                                flex-direction: row;
-                                -ms-flex-wrap: nowrap;
-                                flex-wrap: nowrap;
-                                -ms-flex-align: center;
-                                align-items: center;
-                                -ms-flex-pack: center;
-                                justify-content: center;
-                                transition: transform 0.2s ease;
-                            }
-                        }
-
-                        .title {
-                            text-align: center;
-
-                            &:before {
-                                padding: none;
-                            }
-                        }
-                    }
-
-                }
-            }
-        }
-    }
-
     .main {
         margin: 0 0 0 150px;
     }
 }
-
 
 /* Dev debug mode */
 @mixin box_sizing {

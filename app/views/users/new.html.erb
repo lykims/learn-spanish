@@ -1,25 +1,19 @@
 <% provide(:title, "Sign Up") %>
-<section>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-            <div class="form-container">
-                <h1>Sign Up</h1>
-                <%= form_for(@user, url: signup_path, :html => { :class => "form-horizontal login-register"} ) do |f| %>
-                    <%= render 'shared/error_messages' %>
+<% content_for :body_class, 'splash' %>
 
-                    <%= f.text_field :name, class: "form-input form-control", placeholder: "Name" %>
+<%= form_for(@user, url: signup_path, :html => { :class => "login-register-form"} ) do |f| %>
+    <h1>Sign Up</h1>
+    <%= render 'shared/error_messages' %>
 
-                    <%= f.text_field :username, class: "form-input form-control", placeholder: "Username"  %>
+    <%= f.text_field :name, class: "form-input form-control", placeholder: "Name" %>
 
-                    <%= f.password_field :password, class: "form-input form-control", placeholder: "Password" %>
+    <%= f.text_field :username, class: "form-input form-control", placeholder: "Username"  %>
 
-                    <%= f.password_field :password_confirmation, class: "form-input form-control", placeholder: "Confirmation" %>
+    <%= f.password_field :password, class: "form-input form-control", placeholder: "Password" %>
 
-                    <%= f.submit "Create", class: "btn btn-primary" %>
+    <%= f.password_field :password_confirmation, class: "form-input form-control", placeholder: "Confirmation" %>
 
-                    <p class="message">Already registered? <%= link_to "Log In", login_path %></p>
-                <% end %>
-            </div>
-        </div>
-    </div>
-</section>
+    <%= f.submit "Create", class: "btn btn-primary" %>
+
+    <p class="message">Already registered? <%= link_to "Log In", login_path %></p>
+<% end %>

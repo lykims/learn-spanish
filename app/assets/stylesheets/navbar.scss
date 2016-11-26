@@ -1,0 +1,34 @@
+@import "variables";
+
+.navbar-default {
+    background-color: $dark-gray;
+    border: none;
+
+    .navbar-brand {
+        color: #FFFFFF;
+
+        &:focus {
+            color: #FFFFFF;
+        }
+
+        &:hover {
+            color: #777777;
+        }
+    }
+
+    .navbar-nav {
+        li {
+            a {
+                color: #FFFFFF;
+
+                &:focus {
+                    color: #FFFFFF;
+                }
+
+                &:hover {
+                    color: #777777;
+                }
+            }
+        }
+    }
+}

@@ -40,3 +40,4 @@ $ rails server
 ## Resources
 * <https://www.railstutorial.org/book>
 * <http://docs.railsbridge.org>
+* <https://unsplash.com/> for free high-resolution photos
