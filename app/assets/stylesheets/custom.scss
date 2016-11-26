@@ -194,6 +194,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     background-color: $primary;
     border: none;
 
+    &:active {
+        background-color: $primary;
+    }
+
+    &:active:focus {
+        background-color: $primary;
+    }
+
+    &:active:hover {
+        background-color: $primary-light;
+    }
+
     &:focus {
         background-color: $primary;
     }
