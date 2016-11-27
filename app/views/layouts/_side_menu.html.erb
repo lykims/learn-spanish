@@ -44,9 +44,9 @@
                 <% end %>
             </li>
             <li class="hidden-sm hidden-md hidden-lg">
-                <%= active_link_to user_path(@user), :action => 'go' do %>
+                <%= active_link_to user_path(@current_user), :action => 'go' do %>
                     <div class="icon"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i></div>
-                    <div class="title"><%= @user.name %></div>
+                    <div class="title"><%= @current_user.name %></div>
                 <% end %>
             </li>
             <li class="hidden-sm hidden-md hidden-lg">
