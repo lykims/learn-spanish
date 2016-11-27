@@ -191,25 +191,31 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     background-color: $primary;
     border: none;
 
-    &:active {
+    &:active:focus,
+    &:active.focus,
+    &.active:focus,
+    &.active.focus
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
         background-color: $primary;
     }
 
-    &:active:focus {
-        background-color: $primary;
-    }
-
-    &:active:hover {
+    &:active:hover,
+    &.active:hover,
+    &:hover,
+    &.hover,
+    &.disabled:hover,
+    &.disabled.hover,
+    &.disabled:focus,
+    &.disabled.focus,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled].hover,
+    &[disabled]:focus,
+    &[disabled].focus, {
         background-color: $primary-light;
-    }
-
-    &:focus {
-        background-color: $primary;
-    }
-
-    &:hover {
-        background-color: $primary-light;
-        border: none;
     }
 }
 
