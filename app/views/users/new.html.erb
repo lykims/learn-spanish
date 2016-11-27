@@ -5,15 +5,15 @@
     <h1>Sign Up</h1>
     <%= render 'shared/error_messages' %>
 
-    <%= f.text_field :name, class: "form-input form-control", placeholder: "Name" %>
+    <%= f.text_field :name, class: "form-input form-control form-line", placeholder: "Name" %>
 
-    <%= f.text_field :username, class: "form-input form-control", placeholder: "Username"  %>
+    <%= f.text_field :username, class: "form-input form-control form-line", placeholder: "Username"  %>
 
-    <%= f.password_field :password, class: "form-input form-control", placeholder: "Password" %>
+    <%= f.password_field :password, class: "form-input form-control form-line", placeholder: "Password" %>
 
-    <%= f.password_field :password_confirmation, class: "form-input form-control", placeholder: "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: "form-input form-control form-line", placeholder: "Confirmation" %>
 
-    <%= f.submit "Create", class: "btn btn-primary" %>
+    <%= f.submit "Create", class: "btn btn-primary form-line" %>
 
     <p class="message">Already registered? <%= link_to "Log In", login_path %></p>
 <% end %>

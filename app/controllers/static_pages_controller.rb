@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
     def splash
+        redirect_to home_path if logged_in?
     end
-    
+
     def home
     end
 

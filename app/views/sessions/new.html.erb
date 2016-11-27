@@ -5,11 +5,20 @@
     <h1>Log In</h1>
     <%= render 'shared/flash' %>
 
-    <%= f.text_field :username, class: "form-input form-control", placeholder: "Username"  %>
+    <%= f.text_field :username, class: "form-input form-control form-line", placeholder: "Username"  %>
 
-    <%= f.password_field :password, class: "form-input form-control", placeholder: "Password" %>
+    <%= f.password_field :password, class: "form-input form-control form-line", placeholder: "Password" %>
 
-    <%= f.submit "Log In", class: "btn btn-primary" %>
+    <div class="col-xs-12 form-line">
+        <div class="pull-left">
+            <%= f.label :remember_me, class: "checkbox inline" do %>
+                <%= f.check_box :remember_me %>
+                <span>Remember me</span>
+            <% end %>
+        </div>
+    </div>
+
+    <%= f.submit "Log In", class: "btn btn-primary form-line" %>
 
     <p class="message">Not registered? <%= link_to "Create an account", signup_path%></p>
 <% end %>

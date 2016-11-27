@@ -151,11 +151,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     -o-animation: login 1s ease-in-out;
     animation: login 1s ease-in-out;
 
+    .form-line {
+        margin: 0 0 15px;
+    }
+
     input {
         outline: 0;
         width: 100%;
         border: 0;
-        margin: 0 0 15px;
         padding: 15px;
         border-radius: 3px;
         box-sizing: border-box;
@@ -164,17 +167,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         -o-transition: all .1s ease-in-out;
         -ms-transition: all .1s ease-in-out;
         transition: all .1s ease-in-out;
-    }
 
-    input.form-control {
-        height: auto !important;
-    }
+        &[type=checkbox],
+        &.checkbox {
+            margin-top: 4px;
+            margin-bottom: 0px;
+        }
 
-    input.form-input {
-        background: $background-color;
+        &.form-control {
+            height: auto !important;
+        }
 
-        &:focus {
+        &.form-input {
             background: $background-color;
+
+            &:focus {
+                background: $background-color;
+            }
         }
     }
 }
