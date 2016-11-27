@@ -181,6 +181,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .btn {
     border-radius: 0px;
+    font-weight: 300;
 }
 
 .btn-lg {
@@ -217,6 +218,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     &[disabled].focus, {
         background-color: $primary-light;
     }
+}
+
+.navbar-brand {
+    font-weight: 300;
 }
 
 .jumbotron {
