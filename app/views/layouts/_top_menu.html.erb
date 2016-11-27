@@ -6,21 +6,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <%= link_to "Learning Language - Spanish", home_path, id: "logo", class: "navbar-brand" %>
+        <% if logged_in? %>
+            <%= link_to "Learning Language - Spanish", home_path, id: "logo", class: "navbar-brand" %>
+        <% else %>
+            <%= link_to "Learning Language - Spanish", root_path, id: "logo", class: "navbar-brand" %>
+        <% end %>
     </div>
 
     <nav class="navbar-right hidden-xs">
         <ul class="nav navbar-nav">
             <li>
-                <%= link_to user_path(@current_user), :action => 'go' do %>
-                    <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i> <%= @current_user.name %>
+                <%= link_to about_path, :action => 'go' do %>
+                    <i class="fa fa-info fa-fw" aria-hidden="true"></i> About
                 <% end %>
             </li>
-            <li>
-                <%= link_to logout_path, method: "delete", :action => 'go' do %>
-                    <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Log Out
-                <% end %>
-            </li>
+            <% if logged_in? %>
+                <li>
+                    <%= link_to user_path(@current_user), :action => 'go' do %>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i> <%= @current_user.name %>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to logout_path, method: "delete", :action => 'go' do %>
+                        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Log Out
+                    <% end %>
+                </li>
+            <% end %>
         </ul>
     </nav>
 </div>

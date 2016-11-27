@@ -12,10 +12,8 @@
 
     <body class="<%= content_for :body_class %>">
         <div class="page-wrapper">
-            <% if logged_in? %>
-                <%= render 'layouts/header' %>
-                <%= render 'layouts/side_menu' %>
-            <% end %>
+            <%= render 'layouts/header' %>
+            <%= render 'layouts/side_menu' %>
             <div class="main" <% if !logged_in? %>style="margin: 0;"<% end %>>
                 <div class="container-fluid">
                     <%= yield %>

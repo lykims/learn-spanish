@@ -1,60 +1,66 @@
-<nav class="sidebar collapse" role="navigation" id="side-menu">
-    <div class="sidebar-nav navbar-collapse">
-        <ul class="nav">
-            <li>
-                <a href="#">
-                    <div class="icon"><i class="fa fa-users fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">Peer Scores</div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="icon"><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">Greetings</div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="icon"><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">Calendar</div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="icon"><i class="fa fa-list-ol fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">Numbers</div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="icon"><i class="fa fa-book fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">Vocabulary</div>
-                </a>
-            </li>
-            <li >
-                <%= active_link_to about_path, :action => 'go' do %>
-                    <div class="icon"><i class="fa fa-info fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">About</div>
+<div <% if !logged_in? %>class="hidden-sm hidden-md hidden-lg"<% end %>>
+    <nav class="sidebar collapse" role="navigation" id="side-menu">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav">
+                <% if logged_in? %>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa fa-users fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Peer Scores</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Greetings</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Calendar</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa fa-list-ol fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Numbers</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa fa-book fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Vocabulary</div>
+                        </a>
+                    </li>
                 <% end %>
-            </li>
-            <li>
-                <%= active_link_to help_path, :action => 'go' do %>
-                    <div class="icon"><i class="fa fa-question fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">Help</div>
+                <li >
+                    <%= active_link_to about_path, :action => 'go' do %>
+                        <div class="icon"><i class="fa fa-info fa-fw" aria-hidden="true"></i></div>
+                        <div class="title">About</div>
+                    <% end %>
+                </li>
+                <% if logged_in? %>
+                    <li>
+                        <%= active_link_to help_path, :action => 'go' do %>
+                            <div class="icon"><i class="fa fa-question fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Help</div>
+                        <% end %>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <%= active_link_to user_path(@current_user), :action => 'go' do %>
+                            <div class="icon"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i></div>
+                            <div class="title"><%= @current_user.name %></div>
+                        <% end %>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <%= active_link_to logout_path, method: "delete", :action => 'go' do %>
+                            <div class="icon"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Log Out</div>
+                        <% end %>
+                    </li>
                 <% end %>
-            </li>
-            <li class="hidden-sm hidden-md hidden-lg">
-                <%= active_link_to user_path(@current_user), :action => 'go' do %>
-                    <div class="icon"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i></div>
-                    <div class="title"><%= @current_user.name %></div>
-                <% end %>
-            </li>
-            <li class="hidden-sm hidden-md hidden-lg">
-                <%= active_link_to logout_path, method: "delete", :action => 'go' do %>
-                    <div class="icon"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i></div>
-                    <div class="title">Log Out</div>
-                <% end %>
-            </li>
-        </ul>
-    </div>
-</nav>
+            </ul>
+        </div>
+    </nav>
+</div>
