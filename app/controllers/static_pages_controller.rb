@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
+    before_action :logged_in_user, only: [:home, :help]
+    before_action :logged_out_user, only: [:splash]
+
     def splash
-        redirect_to home_path if logged_in?
     end
 
     def home

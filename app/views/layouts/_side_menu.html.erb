@@ -4,10 +4,10 @@
             <ul class="nav">
                 <% if logged_in? %>
                     <li>
-                        <a href="#">
+                        <%= active_link_to users_path, :action => 'go' do %>
                             <div class="icon"><i class="fa fa-users fa-fw" aria-hidden="true"></i></div>
-                            <div class="title">Peer Scores</div>
-                        </a>
+                            <div class="title">Peers</div>
+                        <% end %>
                     </li>
                     <li>
                         <a href="#">

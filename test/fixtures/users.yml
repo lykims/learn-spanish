@@ -4,3 +4,26 @@ kim:
   name: Kim
   username: kim
   password_digest: <%= User.digest('password') %>
+  admin: true
+
+john:
+  name: John Smith
+  username: john
+  password_digest: <%= User.digest('password') %>
+
+jane:
+  name: Jane Doe
+  username: jane
+  password_digest: <%= User.digest('password') %>
+
+bob:
+  name: Bob
+  username: bob
+  password_digest: <%= User.digest('password') %>
+
+<% 15.times do |n| %>
+user_<%= n %>:
+    name:  <%= "User #{n}" %>
+    username: <%= "user-#{n}" %>
+    password_digest: <%= User.digest('password') %>
+<% end %>
