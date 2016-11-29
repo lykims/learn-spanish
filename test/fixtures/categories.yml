@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+calendar_category:
+  name: Calendar
+  description: Months, Days of the week, Periods of the day
+
+vocabulary_category:
+  name: Vocabulary
+  description: Vocabulary

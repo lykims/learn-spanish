@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127234600) do
+ActiveRecord::Schema.define(version: 20161129050911) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_answers_on_user_id"
+    t.index ["word_id"], name: "index_answers_on_word_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +37,17 @@ ActiveRecord::Schema.define(version: 20161127234600) do
     t.string   "remember_digest"
     t.boolean  "admin",           default: false
     t.index ["username"], name: "index_users_on_username", unique: true
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.string   "english"
+    t.string   "spanish"
+    t.integer  "category_id"
+    t.string   "tag"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "english_prefix"
+    t.index ["category_id"], name: "index_words_on_category_id"
   end
 
 end

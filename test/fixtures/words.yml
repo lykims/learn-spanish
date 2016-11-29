@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+january_word:
+  english: January
+  spanish: enero
+  category: calendar_category
+  tag: month
+
+february_word:
+  english: February
+  spanish: febrero
+  category: calendar_category
+  tag: MyString

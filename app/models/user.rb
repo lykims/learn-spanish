@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :answers
+
     attr_accessor :remember_token
 
     before_save { self.username = username.downcase }

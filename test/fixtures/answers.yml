@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+kim_answer1:
+  user: kim
+  word: january_word
+
+kim_answer2:
+  user: kim
+  word: february_word
+
+john_answer1:
+  user: john
+  word: january_word
