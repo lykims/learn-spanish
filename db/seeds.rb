@@ -142,6 +142,7 @@ words = Word.create([
         # R
         {english: 'Romania', spanish: 'Rumania', category_id:vocabulary_category.id},
         {english: 'Romanian', spanish: 'rumano', category_id:vocabulary_category.id},
+        {english: 'road', spanish: 'camino', category_id:vocabulary_category.id},
         # S
         # T
         # U
