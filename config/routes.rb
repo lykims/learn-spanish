@@ -10,4 +10,14 @@ Rails.application.routes.draw do
     post    '/login',   to: 'sessions#create'
     delete  '/logout',  to: 'sessions#destroy'
     resources :users
+    resources :words do
+        collection do
+            get '/vocabulary', :to => 'words#show', :as => 'dictionary'
+            get '/vocabulary/:letter', :to => 'words#index', :as => 'vocabulary'
+            get '/greetings', :to => 'words#greetings', :as => 'greetings'
+            get '/calendar', :to => 'words#calendar', :as => 'calendar'
+            get '/numbers', :to => 'words#numbers', :as => 'numbers'
+        end
+    end
+    match '*path' => redirect('/'), via: :get
 end

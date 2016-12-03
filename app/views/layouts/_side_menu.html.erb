@@ -10,28 +10,28 @@
                         <% end %>
                     </li>
                     <li>
-                        <a href="#">
+                        <%= active_link_to greetings_words_path, :action => 'go' do %>
                             <div class="icon"><i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i></div>
                             <div class="title">Greetings</div>
-                        </a>
+                        <% end %>
                     </li>
                     <li>
-                        <a href="#">
+                        <%= active_link_to calendar_words_path, :action => 'go' do %>
                             <div class="icon"><i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i></div>
                             <div class="title">Calendar</div>
-                        </a>
+                        <% end %>
                     </li>
                     <li>
-                        <a href="#">
+                        <%= active_link_to numbers_words_path, :action => 'go' do %>
                             <div class="icon"><i class="fa fa-list-ol fa-fw" aria-hidden="true"></i></div>
                             <div class="title">Numbers</div>
-                        </a>
+                        <% end %>
                     </li>
                     <li>
-                        <a href="#">
+                        <%= active_link_to dictionary_words_path, :action => 'go' do %>
                             <div class="icon"><i class="fa fa-book fa-fw" aria-hidden="true"></i></div>
                             <div class="title">Vocabulary</div>
-                        </a>
+                        <% end %>
                     </li>
                 <% end %>
                 <li >

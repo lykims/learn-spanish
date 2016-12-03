@@ -1,0 +1,19 @@
+<% provide(:title, "Calendar") %>
+<div class="page-header">
+    <h1>Calendar</h1>
+</div>
+
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h3>Months</h3>
+    <%= render 'words/words_table', :words => @month_words %>
+</div>
+
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h3>Week Days</h3>
+    <%= render 'words/words_table', :words => @day_words %>
+</div>
+
+<div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h3>Day Periods</h3>
+    <%= render 'words/words_table', :words => @period_words %>
+</div>

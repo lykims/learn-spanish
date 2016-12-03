@@ -7,6 +7,10 @@ This website was created to learn Spanish vocabulary faster in a fun way and new
 ## Development Tools
 
 * Ruby on Rails
+* ActiveRecord
+* Sass
+* Bootstrap
+* Font Awesome
 
 ## Production Site
 
@@ -23,6 +27,12 @@ Next, migrate the database:
 
 ```
 $ rails db:migrate
+```
+
+Then, seed data to database:
+
+```
+$ rails db:seed
 ```
 
 Finally, run the test suite to verify that everything is working correctly:

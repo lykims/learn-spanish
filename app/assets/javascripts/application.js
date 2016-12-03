@@ -15,7 +15,4 @@
 //= require turbolinks
 //= require bootstrap
 //
-// Vendor Files
-//
-//
 //= require_tree .

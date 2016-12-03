@@ -10,4 +10,10 @@ february_word:
   english: February
   spanish: febrero
   category: calendar_category
+  tag: month
+
+comida_word:
+  english: food
+  spanish: comida
+  category: vocabulary_category
   tag: MyString
