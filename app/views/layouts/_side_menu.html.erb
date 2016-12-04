@@ -41,12 +41,6 @@
                     <% end %>
                 </li>
                 <% if logged_in? %>
-                    <li>
-                        <%= active_link_to help_path, :action => 'go' do %>
-                            <div class="icon"><i class="fa fa-question fa-fw" aria-hidden="true"></i></div>
-                            <div class="title">Help</div>
-                        <% end %>
-                    </li>
                     <li class="hidden-sm hidden-md hidden-lg">
                         <%= active_link_to user_path(@current_user), :action => 'go' do %>
                             <div class="icon"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i></div>
