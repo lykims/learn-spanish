@@ -1,34 +1,37 @@
 class WordsController < ApplicationController
+    before_action :logged_in_user
+
     def index
-        @vocabulary_category = Category.where(name: 'Vocabulary')
-        @first_letters = Word.where(category: @vocabulary_category).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
+        @first_letters = Word.joins(:category).where(categories: {name: 'Vocabulary'}).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
         if params[:letter] && @first_letters.any? && @first_letters.include?(params[:letter])
-            @words = Word.where("english LIKE ? AND category_id = ?", params[:letter]+"%", @vocabulary_category.ids)
+            letter = params[:letter] + '%'
+            @words = Word.joins(:category).where.has {(category.name == 'Vocabulary') & (english =~ letter)}
         else
             redirect_to dictionary_words_path
         end
     end
 
     def show
-        @vocabulary_category = Category.where(name: 'Vocabulary')
-        @first_letters = Word.where(category: @vocabulary_category).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
-        redirect_to vocabulary_words_url(@first_letters.first)
+        @first_letters = Word.joins(:category).where(categories: {name: 'Vocabulary'}).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
+        if @first_letters.any?
+            redirect_to vocabulary_words_url(@first_letters.first)
+        else
+            flash[:danger] = "No words in the dictionary :("
+            redirect_to home_url
+        end
     end
 
     def greetings
-        @greetings_category = Category.where(name: 'Greetings')
-        @words = Word.where(:category => @greetings_category)
+        @words = Word.joins(:category).where(categories: {name: 'Greetings'} )
     end
 
     def calendar
-        @calendar_category = Category.where(name: 'Calendar')
-        @month_words = Word.where(:category => @calendar_category, :tag => 'month')
-        @day_words = Word.where(:category => @calendar_category, :tag => 'day')
-        @period_words = Word.where(:category => @calendar_category, :tag => 'period')
+        @month_words = Word.joins(:category).where(categories: {name: 'Calendar'}, tag: 'month')
+        @day_words = Word.joins(:category).where(categories: {name: 'Calendar'}, tag: 'day')
+        @period_words = Word.joins(:category).where(categories: {name: 'Calendar'}, tag: 'period' )
     end
 
     def numbers
-        @numbers_category = Category.where(name: 'Numbers')
-        @words = Word.where(:category => @numbers_category)
+        @words = Word.joins(:category).where(categories: {name: 'Numbers'} )
     end
 end
