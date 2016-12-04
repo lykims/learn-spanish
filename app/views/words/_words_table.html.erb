@@ -2,8 +2,8 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th class="col-xs-6">English</th>
-                <th class="col-xs-6">Español</th>
+                <th class="col-xs-<%= defined?(en_col_size) ? en_col_size : 6 %>">English</th>
+                <th class="col-xs-<%= defined?(en_col_size) ? es_col_size : 6 %>">Español</th>
             </tr>
         </thead>
         <tbody>
