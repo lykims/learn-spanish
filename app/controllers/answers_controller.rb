@@ -1,12 +1,12 @@
 class AnswersController < ApplicationController
     before_action :logged_in_user
-    
+
     def test
         @word_answer = Answer.new
         @categories = Category.all.collect{|category| category.name}
         if params[:category] && @categories.any? && @categories.include?(params[:category])
             @category = params[:category]
-            @word = Word.joins(:category).where(categories: {name: @category}).sample
+            @word = Word.joins(:category).where(categories: {name: @category}).order("RANDOM()").first
             if @word.nil?
                 flash[:danger] = "No words in the dictionary :("
                 redirect_to home_url
