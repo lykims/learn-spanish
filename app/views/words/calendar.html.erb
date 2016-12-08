@@ -1,6 +1,11 @@
 <% provide(:title, "Calendar") %>
 <div class="page-header">
-    <h1>Calendar</h1>
+    <h1>
+        Calendar
+        <div class="pull-right">
+            <%= link_to "Start Test", test_path("Calendar"), class: "btn btn-primary" %>
+        </div>
+    </h1>
 </div>
 
 <div class="col-xs-12 col-md-6 col-md-offset-3">

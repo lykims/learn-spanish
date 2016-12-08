@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .btn-primary {
     background-color: $primary;
-    border: none;
+    border-color: $primary;
     font-weight: 300;
 
     &:active:focus,
@@ -224,6 +224,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     &:active,
     &.active {
         background-color: $primary;
+        border-color: $primary;
     }
 
     &:active:hover,
@@ -240,6 +241,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     &[disabled]:focus,
     &[disabled].focus, {
         background-color: $primary-light;
+        border-color: $primary-light;
     }
 }
 

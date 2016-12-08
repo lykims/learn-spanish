@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get     '/login',   to: 'sessions#new'
     post    '/login',   to: 'sessions#create'
     delete  '/logout',  to: 'sessions#destroy'
+    get     '/test/:category',  to: 'answers#test', as: 'test'
+    post    '/test/:category',  to: 'answers#submitword', as: 'submitword'
     resources :users
     resources :words do
         collection do

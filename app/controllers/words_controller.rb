@@ -7,7 +7,7 @@ class WordsController < ApplicationController
             letter = params[:letter] + '%'
             @words = Word.joins(:category).where.has {(category.name == 'Vocabulary') & (english =~ letter)}
         else
-            redirect_to dictionary_words_path
+            redirect_to dictionary_words_url
         end
     end
 

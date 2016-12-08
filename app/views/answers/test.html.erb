@@ -1,0 +1,24 @@
+<% provide(:title, "¿Cómo se dice en español?") %>
+<div class="page-header">
+    <h1>
+        ¿Cómo se dice en español?
+    </h1>
+</div>
+
+<%= form_for(@word_answer, url: submitword_path, :html => { :class => "new-word-form" } ) do |f| %>
+    <div class="row">
+        <%= render 'shared/flash' %>
+        <h2><%= @word_answer.english %></h2>
+    </div>
+    <%= render 'shared/error_messages' %>
+    <div class="form-group row">
+        <%= f.hidden_field :english, :value => @word_answer.english %>
+        <%= f.text_field :spanish, class: "form-input form-control" %>
+    </div>
+    <div class="row">
+        <div class="pull-right">
+            <%= f.submit "Next", class: "btn btn-primary" %>
+            <%= link_to "Skip", test_path(@category), class: "btn" %>
+        </div>
+    </div>
+<% end %>
