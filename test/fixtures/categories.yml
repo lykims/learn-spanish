@@ -4,6 +4,10 @@ calendar_category:
   name: Calendar
   description: Months, Days of the week, Periods of the day
 
+greetings_category:
+  name: Greetings
+  description: Greetings
+
 vocabulary_category:
   name: Vocabulary
   description: Vocabulary

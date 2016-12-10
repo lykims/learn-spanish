@@ -11,7 +11,6 @@ class AnswersController < ApplicationController
                 flash[:danger] = "No words in the dictionary :("
                 redirect_to home_url
             else
-                @word_answer.word = @word
                 @word_answer.english = @word.english
             end
         else
