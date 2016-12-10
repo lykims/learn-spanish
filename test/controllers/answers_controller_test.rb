@@ -9,6 +9,11 @@ class AnswersControllerTest < ActionDispatch::IntegrationTest
         @comida_word = words(:comida_word)
     end
 
+    test "should redirect if not logged in" do
+        get test_url(@calendar_category.name)
+        assert_redirected_to login_url
+    end
+
     test "should get test page" do
         log_in_as(@user)
         get test_url(@calendar_category.name)
