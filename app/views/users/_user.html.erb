@@ -1,22 +1,27 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="row">
-            <div class="col-xs-6">
-                <span class="h3 panel-title"><%= link_to user.name, user %></span>
-                <% if current_user.admin? %>
-                    <span class="text-muted">(<%= user.username %>)</span>
-                <% end %>
+<tr>
+    <td>
+        <span class="user-icon">
+            <i class="fa fa-user-circle-o fa-fw fa-3x" aria-hidden="true"></i>
+        </span>
+        <%= link_to user.name, user, class: 'user-link' %>
+        <span class="text-muted"><%= user.username %></span>
+    </td>
+    <td>
+        <%= user.created_at.strftime("%A, %B #{user.created_at.day.ordinalize}, %Y") %>
+    </td>
+    <td>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= user_answers_percentage(user) %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_answers_percentage(user) %>%;">
+                <span class="sr-only"><%= user_answers_percentage(user) %>% Complete</span>
             </div>
-            <div class="col-xs-6">
-                <div class="pull-right">
-                    <% if current_user.admin? && !current_user?(user) %>
-                        <%= link_to "delete", user, method: :delete, data: { confirm: "Are you sure?" } %>
-                    <% end %>
-                </div>
-            </div>
+            <span class="progress-completed"><%= user_answers_percentage(user) %>%</span>
         </div>
-    </div>
-    <div class="panel-body">
-        
-    </div>
-</div>
+    </td>
+    <td>
+        <div class="pull-right">
+            <% if current_user.admin? && !current_user?(user) %>
+                <%= button_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
+            <% end %>
+        </div>
+    </td>
+</tr>

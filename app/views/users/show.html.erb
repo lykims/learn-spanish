@@ -11,4 +11,48 @@
         <% end %>
     </h1>
 </div>
+
 <%= render 'shared/flash' %>
+
+<div class="text-muted">
+    Joined on <%= @user.created_at.strftime("%A, %B #{@user.created_at.day.ordinalize}, %Y") %>
+</div>
+
+<br/>
+
+<div class="col-md-4">
+    <h3>Learning Progress</h3>
+    <div class="box-shadow">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= user_answers_percentage_by_type(@user, 'Greetings') %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_answers_percentage_by_type(@user, 'Greetings') %>%;">
+                <span class="sr-only"><%= user_answers_percentage_by_type(@user, 'Greetings') %>% Complete</span>
+            </div>
+            <span class="progress-type">Greetings</span>
+            <span class="progress-completed"><%= user_answers_percentage_by_type(@user, 'Greetings') %>%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= user_answers_percentage_by_type(@user, 'Calendar') %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_answers_percentage_by_type(@user, 'Calendar') %>%;">
+                <span class="sr-only"><%= user_answers_percentage_by_type(@user, 'Calendar') %>% Complete</span>
+            </div>
+            <span class="progress-type">Calendar</span>
+            <span class="progress-completed"><%= user_answers_percentage_by_type(@user, 'Calendar') %>%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= user_answers_percentage_by_type(@user, 'Numbers') %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_answers_percentage_by_type(@user, 'Numbers') %>%;">
+                <span class="sr-only"><%= user_answers_percentage_by_type(@user, 'Numbers') %>% Complete</span>
+            </div>
+            <span class="progress-type">Numbers</span>
+            <span class="progress-completed"><%= user_answers_percentage_by_type(@user, 'Numbers') %>%</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= user_answers_percentage_by_type(@user, 'Vocabulary') %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_answers_percentage_by_type(@user, 'Vocabulary') %>%;">
+                <span class="sr-only"><%= user_answers_percentage_by_type(@user, 'Vocabulary') %>% Complete</span>
+            </div>
+            <span class="progress-type">Vocabulary</span>
+            <span class="progress-completed"><%= user_answers_percentage_by_type(@user, 'Vocabulary') %>%</span>
+        </div>
+    </div>
+</div>

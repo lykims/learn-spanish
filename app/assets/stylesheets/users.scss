@@ -1,7 +1,48 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
 #user_error_explanation {
     text-align: left;
+}
+
+.edit-profile {
+    max-width: 400px;
+}
+
+.peers-table {
+    border-collapse: separate;
+
+    .progress {
+        margin: 0;
+    }
+
+    thead {
+        tr {
+            th {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                vertical-align: middle;
+                border-top: 10px solid $light-white;
+                background-color: $background-color;
+                margin-top: 10px;
+
+                .user-icon {
+                    float: left;
+                    margin-right: 10px;
+                    color: #CCCCCC;
+                }
+
+                .user-link {
+                    font-size: 1.25em;
+                    display: block;
+                    margin: 0 0 0 60px;
+                }
+            }
+        }
+    }
 }

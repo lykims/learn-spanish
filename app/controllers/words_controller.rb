@@ -30,6 +30,11 @@ class WordsController < ApplicationController
     end
 
     def numbers
-        @words = Word.joins(:category).where(categories: {name: 'Numbers'} )
+        @words1 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '1')
+        @words2 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '2')
+        @words3 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '3')
+        @words4 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '4')
+        @words5 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '5')
+        @words6 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '6')
     end
 end

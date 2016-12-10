@@ -5,7 +5,7 @@
     </h1>
 </div>
 
-<%= form_for(@word_answer, url: submitword_path, :html => { :class => "new-word-form" } ) do |f| %>
+<%= form_for(@word_answer, url: submitword_path, :html => { :class => "new-word-form box-shadow" } ) do |f| %>
     <div class="row">
         <%= render 'shared/flash' %>
         <h2><%= @word_answer.english %></h2>
