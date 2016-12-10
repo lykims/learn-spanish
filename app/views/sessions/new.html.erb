@@ -1,5 +1,7 @@
 <% provide(:title, "Log In") %>
 <% content_for :body_class, 'splash' %>
+<% content_for :main_style, 'margin:0;' %>
+<% content_for :sidemenu_class, 'hidden-sm hidden-md hidden-lg' %>
 
 <%= form_for(:session, url: login_path, :html => { :class => "login-register-form"} ) do |f| %>
     <h1>Log In</h1>

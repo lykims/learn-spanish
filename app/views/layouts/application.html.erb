@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Learning Language - Spanish Vocabulary">
+        <meta name="description" content="Learn Language - Spanish Vocabulary">
         <meta name="author" content="Kim Sang Ly">
         <title><%= full_title(yield(:title)) %></title>
         <%= render 'layouts/rails_default' %>
@@ -14,7 +14,7 @@
         <div class="page-wrapper">
             <%= render 'layouts/header' %>
             <%= render 'layouts/side_menu' %>
-            <div class="main" <% if !logged_in? %>style="margin: 0;"<% end %>>
+            <div class="main" style="<%= content_for :main_style %>">
                 <div class="container-fluid">
                     <%= yield %>
                 </div>

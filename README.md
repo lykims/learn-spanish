@@ -1,4 +1,4 @@
-# Learning Language - Spanish
+# Learn Language - Spanish
 
 ## Objective
 

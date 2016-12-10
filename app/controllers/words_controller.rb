@@ -1,6 +1,4 @@
 class WordsController < ApplicationController
-    before_action :logged_in_user
-
     def index
         @first_letters = Word.joins(:category).where(categories: {name: 'Vocabulary'}).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
         if params[:letter] && @first_letters.any? && @first_letters.include?(params[:letter])

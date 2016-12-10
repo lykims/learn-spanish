@@ -2,9 +2,11 @@
 <div class="page-header">
     <h1>
         Calendar
-        <div class="pull-right">
-            <%= link_to "Start Test", test_path("Calendar"), class: "btn btn-primary" %>
-        </div>
+        <% if logged_in? %>
+            <div class="pull-right">
+                <%= link_to "Start Test", test_path("Calendar"), class: "btn btn-primary" %>
+            </div>
+        <% end %>
     </h1>
 </div>
 

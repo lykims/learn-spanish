@@ -2,7 +2,7 @@ require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     def setup
-        @base_title = "Learning Language - Spanish"
+        @base_title = "Learn Language - Spanish"
         @user = users(:kim)
     end
 
