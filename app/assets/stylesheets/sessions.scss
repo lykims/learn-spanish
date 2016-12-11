@@ -89,40 +89,12 @@
     -o-animation: login 1s ease-in-out;
     animation: login 1s ease-in-out;
 
-    .form-line {
-        margin: 0 0 15px;
-    }
-
     input {
-        outline: 0;
         width: 100%;
-        border: 0;
-        padding: 15px;
-        border-radius: 3px;
-        box-sizing: border-box;
         -webkit-transition: all .1s ease-in-out;
         -moz-transition: all .1s ease-in-out;
         -o-transition: all .1s ease-in-out;
         -ms-transition: all .1s ease-in-out;
         transition: all .1s ease-in-out;
-
-        &[type=checkbox],
-        &.checkbox {
-            margin-top: 4px;
-            margin-bottom: 0px;
-            width: auto;
-        }
-
-        &.form-control {
-            height: auto !important;
-        }
-
-        &.form-input {
-            background: $background-color;
-
-            &:focus {
-                background: $background-color;
-            }
-        }
     }
 }

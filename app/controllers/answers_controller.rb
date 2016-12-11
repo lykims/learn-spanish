@@ -6,15 +6,21 @@ class AnswersController < ApplicationController
         @categories = Category.all.collect{|category| category.name}
         if params[:category] && @categories.any? && @categories.include?(params[:category])
             @category = params[:category]
-            @word = Word.joins(:category).where(categories: {name: @category}).order("RANDOM()").first
-            if @word.nil?
-                flash[:danger] = "No words in the dictionary :("
+            @progress_percentage = user_answers_percentage_by_type(current_user, @category)
+            word = nil
+            if @progress_percentage == 100
+                word = Word.joins(:category).where(categories: {name: @category}).order("RANDOM()").first
+            else
+                word = Word.joins(:category).where(categories: {name: @category}).where.not(id: Answer.where(user_id: current_user.id).select(:word_id)).order("RANDOM()").first
+            end
+            if word.nil?
+                flash[:danger] = "No word found :("
                 redirect_to home_url
             else
-                @word_answer.english = @word.english
+                @word_answer.english = word.english
             end
         else
-            flash[:danger] = "No words in the dictionary :("
+            flash[:danger] = "No word found :("
             redirect_to home_url
         end
     end

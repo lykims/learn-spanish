@@ -77,7 +77,8 @@ a {
 
 .box-shadow {
     background-color: $light-white;
-    padding: 10px;
+    border: 1px solid #F0F0F0;
+    padding: 20px;
     margin-bottom: 20px;
 
     -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
@@ -85,6 +86,44 @@ a {
     -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
     -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
     box-shadow: 1px 1px 2px 0 #CCCCCC;
+}
+
+.app-form {
+    .form-line {
+        margin: 0 0 15px;
+    }
+
+    input {
+        outline: 0;
+        border: 0;
+        padding: 15px;
+        border-radius: 3px;
+        box-sizing: border-box;
+
+        input[type=text] {
+            width: 100%;
+            height: auto;
+        }
+
+        &[type=checkbox],
+        &.checkbox {
+            margin-top: 4px;
+            margin-bottom: 0px;
+            width: auto;
+        }
+
+        &.form-control {
+            height: auto !important;
+        }
+
+        &.form-input {
+            background: $background-color;
+
+            &:focus {
+                background: $background-color;
+            }
+        }
+    }
 }
 
 /* Overwrite Bootstrap */

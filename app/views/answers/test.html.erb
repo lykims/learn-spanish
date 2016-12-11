@@ -5,17 +5,26 @@
     </h1>
 </div>
 
-<%= form_for(@word_answer, url: submitword_path, :html => { :class => "new-word-form box-shadow" } ) do |f| %>
-    <div class="row">
+<div class="new-word-container box-shadow">
+    <% if @progress_percentage == 100 %>
+        <div class="alert alert-success">
+            Congratulations! You've completed this section. You can still practice.
+        </div>
+    <% end %>
+    Set your keyboard layout to type the following characters: á, é, í, ó, ú, ü, ñ
+</div>
+
+<%= form_for(@word_answer, url: submitword_path, :html => { :class => "app-form new-word-container new-word-form box-shadow" } ) do |f| %>
+    <div>
         <%= render 'shared/flash' %>
         <h2><%= @word_answer.english %></h2>
     </div>
     <%= render 'shared/error_messages' %>
-    <div class="form-group row">
+    <div class="form-group">
         <%= f.hidden_field :english, :value => @word_answer.english %>
         <%= f.text_field :spanish, class: "form-input form-control" %>
     </div>
-    <div class="row">
+    <div class="row test-button-group">
         <div class="pull-right">
             <%= f.submit "Next", class: "btn btn-primary" %>
             <%= link_to "Skip", test_path(@category), class: "btn" %>
