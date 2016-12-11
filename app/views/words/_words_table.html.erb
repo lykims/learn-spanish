@@ -9,8 +9,19 @@
         <tbody>
             <% words.each do |word| %>
                 <tr>
-                    <td><% if word.english_prefix %><%= word.english_prefix %> <% end %><%= word.english %></td>
-                    <td><%= word.spanish %></td>
+                    <td>
+                        <% if word.english_prefix %><%= word.english_prefix %> <% end %><%= word.english %>
+                    </td>
+                    <td>
+                        <%= word.spanish %>
+                        <% if logged_in? && current_user.admin? %>
+                            <div class="pull-right">
+                                <%= link_to edit_word_path(word), :class => 'no-hover-style', :action => 'go' do %>
+                                    <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    </td>
                 </tr>
             <% end %>
         </tbody>

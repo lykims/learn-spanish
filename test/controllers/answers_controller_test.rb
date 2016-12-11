@@ -1,9 +1,8 @@
 require 'test_helper'
-require 'answers_helper'
 
 class AnswersControllerTest < ActionDispatch::IntegrationTest
     include AnswersHelper
-    
+
     def setup
         @user = users(:kim)
         @calendar_category = categories(:calendar_category)

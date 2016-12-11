@@ -10,3 +10,14 @@
         </div>
     </div>
 <% end %>
+
+<% if @word && @word.errors.any? %>
+    <div class="alert alert-danger">
+        The form contains <%= pluralize(@word.errors.count, "error") %>.
+        <ul>
+            <% @word.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

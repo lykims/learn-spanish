@@ -1,4 +1,7 @@
 class WordsController < ApplicationController
+    before_action :logged_in_user, only: [:new, :create, :edit, :update]
+    before_action :admin_user,     only: [:new, :create, :edit, :update]
+
     def index
         @first_letters = Word.joins(:category).where(categories: {name: 'Vocabulary'}).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
         if params[:letter] && @first_letters.any? && @first_letters.include?(params[:letter])
@@ -37,4 +40,39 @@ class WordsController < ApplicationController
         @words5 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '5')
         @words6 = Word.joins(:category).where(categories: {name: 'Numbers'}, tag: '6')
     end
+
+    def new
+        @word = Word.new
+    end
+
+    def create
+        @word = Word.new(word_params)
+        puts @word
+        if @word.save
+            flash[:success] = "New word succesfully added!"
+            redirect_to home_url
+        else
+            render 'new'
+        end
+    end
+
+    def edit
+        @word = Word.find(params[:id])
+    end
+
+    def update
+        @word = Word.find(params[:id])
+        if @word.update_attributes(word_params)
+            flash[:success] = "Word updated!"
+            redirect_to @word
+        else
+            render 'edit'
+        end
+    end
+
+    private
+
+        def word_params
+          params.require(:word).permit(:english, :spanish, :category_id, :tag)
+        end
 end

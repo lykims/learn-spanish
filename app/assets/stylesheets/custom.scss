@@ -49,6 +49,10 @@ a {
     &:hover {
         color: $primary-light;
     }
+
+    &.no-hover-style:hover {
+        text-decoration: none;
+    }
 }
 
 .center {
@@ -95,6 +99,16 @@ a {
 .app-form {
     .form-line {
         margin: 0 0 15px;
+    }
+
+    select {
+        outline: 0;
+        border: 0;
+        padding: 15px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        height: auto;
+        background: $background-color;
     }
 
     input {

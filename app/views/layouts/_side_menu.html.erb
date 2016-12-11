@@ -41,6 +41,14 @@
                     <% end %>
                 </li>
                 <% if logged_in? %>
+                    <% if current_user.admin? %>
+                        <li >
+                            <%= active_link_to new_word_path, :action => 'go' do %>
+                                <div class="icon"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></div>
+                                <div class="title">Add Word</div>
+                            <% end %>
+                        </li>
+                    <% end %>
                     <li class="hidden-sm hidden-md hidden-lg">
                         <%= active_link_to user_path(@current_user), :action => 'go' do %>
                             <div class="icon"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i></div>
