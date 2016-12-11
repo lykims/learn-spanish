@@ -22,7 +22,7 @@
     <%= render 'shared/error_messages' %>
     <div class="form-group">
         <%= f.hidden_field :english, :value => @word_answer.english %>
-        <%= f.text_field :spanish, class: "form-input form-control" %>
+        <%= f.text_field :spanish, class: "form-input form-control", autofocus: true %>
     </div>
     <div class="row test-button-group">
         <div class="pull-right">
