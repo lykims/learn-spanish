@@ -16,6 +16,11 @@ class WordsControllerTest < ActionDispatch::IntegrationTest
         assert_response :success
     end
 
+    test "should get questions" do
+        get questions_words_url
+        assert_response :success
+    end
+
     test "should get calendar" do
         get calendar_words_url
         assert_response :success

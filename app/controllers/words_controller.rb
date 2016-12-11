@@ -6,7 +6,7 @@ class WordsController < ApplicationController
         @first_letters = Word.joins(:category).where(categories: {name: 'Vocabulary'}).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
         if params[:letter] && @first_letters.any? && @first_letters.include?(params[:letter])
             letter = params[:letter] + '%'
-            @words = Word.joins(:category).where.has {(category.name == 'Vocabulary') & (english =~ letter)}
+            @words = Word.joins(:category).where.has {(category.name == 'Vocabulary') & (english =~ letter)}.ordering { [english.asc] }
         else
             redirect_to dictionary_words_url
         end
@@ -24,6 +24,10 @@ class WordsController < ApplicationController
 
     def greetings
         @words = Word.joins(:category).where(categories: {name: 'Greetings'} )
+    end
+
+    def questions
+        @words = Word.joins(:category).where(categories: {name: 'Questions'} )
     end
 
     def calendar

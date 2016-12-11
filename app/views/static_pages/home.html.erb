@@ -40,6 +40,7 @@ var doughnutChart = new Chart(document.getElementById("vocCategoriesChart"), {
     data: {
         labels: [
             "Greetings",
+            "Questions",
             "Calendar",
             "Numbers",
             "Other"
@@ -48,18 +49,21 @@ var doughnutChart = new Chart(document.getElementById("vocCategoriesChart"), {
             {
                 data: [
                     <%= @greetings_words_count %>,
+                    <%= @questions_words_count %>,
                     <%= @calendar_words_count %>,
                     <%= @numbers_words_count %>,
                     <%= @other_voc_words_count %>
                 ],
                 backgroundColor: [
                     "#58C45A",
+                    "#B769DB",
                     "#36A2EB",
                     "#FFCE56",
                     "#ED5151"
                 ],
                 hoverBackgroundColor: [
                     "#58C45A",
+                    "#B769DB",
                     "#36A2EB",
                     "#FFCE56",
                     "#ED5151"

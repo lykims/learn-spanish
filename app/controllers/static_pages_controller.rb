@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
         @users_count = User.count
         @words_count = Word.count
         @greetings_words_count = Word.joins(:category).where(categories: {name: 'Greetings'}).count
+        @questions_words_count = Word.joins(:category).where(categories: {name: 'Questions'}).count
         @calendar_words_count = Word.joins(:category).where(categories: {name: 'Calendar'}).count
         @numbers_words_count = Word.joins(:category).where(categories: {name: 'Numbers'}).count
         @other_voc_words_count = Word.joins(:category).where(categories: {name: 'Vocabulary'}).count

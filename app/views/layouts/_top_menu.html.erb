@@ -15,7 +15,15 @@
 
     <nav class="navbar-right hidden-xs">
         <ul class="nav navbar-nav">
+            <li>
+                <%= link_to "About", about_path %>
+            </li>
             <% if logged_in? %>
+                <li>
+                    <%= link_to users_path, :action => 'go' do %>
+                        <i class="fa fa-users fa-fw" aria-hidden="true"></i> Learners
+                    <% end %>
+                </li>
                 <li>
                     <%= link_to user_path(@current_user), :action => 'go' do %>
                         <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i> <%= @current_user.name %>
@@ -28,13 +36,10 @@
                 </li>
             <% else %>
                 <li>
-                    <%= link_to "About", about_path%>
+                    <%= link_to "Log In", login_path %>
                 </li>
                 <li>
-                    <%= link_to "Log In", login_path%>
-                </li>
-                <li>
-                    <%= link_to "Sign Up", signup_path%>
+                    <%= link_to "Sign Up", signup_path %>
                 </li>
             <% end %>
         </ul>

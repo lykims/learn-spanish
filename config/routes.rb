@@ -17,6 +17,7 @@ Rails.application.routes.draw do
             get '/vocabulary', :to => 'words#show', :as => 'dictionary'
             get '/vocabulary/:letter', :to => 'words#index', :as => 'vocabulary'
             get '/greetings', :to => 'words#greetings', :as => 'greetings'
+            get '/questions', :to => 'words#questions', :as => 'questions'
             get '/calendar', :to => 'words#calendar', :as => 'calendar'
             get '/numbers', :to => 'words#numbers', :as => 'numbers'
         end

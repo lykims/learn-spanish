@@ -10,7 +10,8 @@
             <% words.each do |word| %>
                 <tr>
                     <td>
-                        <% if word.english_prefix %><%= word.english_prefix %> <% end %><%= word.english %>
+                        <% if word.english_prefix %><%= word.english_prefix %> <% end %>
+                        <%= word.english %>
                     </td>
                     <td>
                         <%= word.spanish %>

@@ -32,6 +32,14 @@
         </div>
 
         <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= user_answers_percentage_by_type(@user, 'Questions') %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_answers_percentage_by_type(@user, 'Questions') %>%;">
+                <span class="sr-only"><%= user_answers_percentage_by_type(@user, 'Questions') %>% Complete</span>
+            </div>
+            <span class="progress-type">Questions</span>
+            <span class="progress-completed"><%= user_answers_percentage_by_type(@user, 'Questions') %>%</span>
+        </div>
+
+        <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="<%= user_answers_percentage_by_type(@user, 'Calendar') %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_answers_percentage_by_type(@user, 'Calendar') %>%;">
                 <span class="sr-only"><%= user_answers_percentage_by_type(@user, 'Calendar') %>% Complete</span>
             </div>

@@ -8,6 +8,8 @@
 
 greetings_category = Category.where(name: 'Greetings', description: 'Greetings').first_or_create
 
+questions_category = Category.where(name: 'Questions', description: 'Questions').first_or_create
+
 calendar_category = Category.where(name: 'Calendar', description: 'Months, Days of the week, Periods of the day').first_or_create
 
 numbers_category = Category.where(name: 'Numbers', description: 'Numbers').first_or_create
@@ -24,6 +26,16 @@ words = Word.create([
         {english: 'See you soon', spanish: 'Hasta pronto', category_id:greetings_category.id},
         {english: 'See you tomorrow', spanish: 'Hasta mañana', category_id:greetings_category.id},
         {english: 'See you on Monday', spanish: 'Hasta lunes', category_id:greetings_category.id},
+
+        {english: 'how', spanish: 'cómo', category_id:questions_category.id},
+        {english: 'what', spanish: 'qué', category_id:questions_category.id},
+        {english: 'how long / how much / how many', spanish: 'cuánto', category_id:questions_category.id},
+        {english: 'when', spanish: 'cuándo', category_id:questions_category.id},
+        {english: 'where (in or at what place?)', spanish: 'dónde', category_id:questions_category.id},
+        {english: 'where (to what place?)', spanish: 'adónde', category_id:questions_category.id},
+        {english: 'where (from what place?)', spanish: 'de dónde', category_id:questions_category.id},
+        {english: 'which', spanish: 'cuál', category_id:questions_category.id},
+        {english: 'why', spanish: 'por qué', category_id:questions_category.id},
 
         {english: 'January', spanish: 'enero', category_id:calendar_category.id, tag:'month'},
         {english: 'February', spanish: 'febrero', category_id:calendar_category.id, tag:'month'},
@@ -108,34 +120,42 @@ words = Word.create([
 
         # A
         {english: 'accident', spanish: 'el accidente', category_id:vocabulary_category.id},
-        {english: 'add', spanish: '', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'add', spanish: 'sumar', category_id:vocabulary_category.id, english_prefix: 'to'},
         {english: 'address', spanish: 'la dirección', category_id:vocabulary_category.id},
         {english: 'age', spanish: 'la edad', category_id:vocabulary_category.id},
-        {english: 'allergy', spanish: '', category_id:vocabulary_category.id},
+        {english: 'allergy', spanish: 'la alergia', category_id:vocabulary_category.id},
         # B
-        {english: 'bill', spanish: 'la nota', category_id:vocabulary_category.id, tag:'restaurant'},
+        {english: 'bill (restaurant)', spanish: 'la nota', category_id:vocabulary_category.id},
         {english: 'buy', spanish: 'comprar', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'beach', spanish: 'playa', category_id:vocabulary_category.id},
+        {english: 'beer', spanish: 'cerveza', category_id:vocabulary_category.id},
         # C
         {english: 'Canada', spanish: 'Canadá', category_id:vocabulary_category.id},
         {english: 'Canadian', spanish: 'canadiense', category_id:vocabulary_category.id},
         # D
-        {english: 'drink', spanish: 'la bebida', category_id:vocabulary_category.id, tag:'noun'},
+        {english: 'drink (noun)', spanish: 'la bebida', category_id:vocabulary_category.id},
         {english: 'drink', spanish: 'beber', category_id:vocabulary_category.id, english_prefix: 'to'},
         # E
+        {english: 'eat', spanish: 'comer', category_id:vocabulary_category.id},
         # F
-        {english: 'friend', spanish: '', category_id:vocabulary_category.id},
+        {english: 'friend', spanish: 'amigo', category_id:vocabulary_category.id},
+        {english: 'feminine', spanish: 'femenino', category_id:vocabulary_category.id},
+        {english: 'for', spanish: 'para', category_id:vocabulary_category.id},
+        {english: 'food', spanish: 'comida', category_id:vocabulary_category.id},
         # G
-        {english: 'go', spanish: '', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'go', spanish: 'ir', category_id:vocabulary_category.id, english_prefix: 'to'},
         # H
         {english: 'help', spanish: 'ayudar', category_id:vocabulary_category.id, english_prefix: 'to'},
         # I
         # J
         # K
         # L
-        {english: 'like', spanish: '', category_id:vocabulary_category.id, english_prefix: 'to'},
-        {english: 'love', spanish: '', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'like', spanish: 'gustar', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'love', spanish: 'querer', category_id:vocabulary_category.id, english_prefix: 'to'},
         # M
+        {english: 'masculine', spanish: 'masculino', category_id:vocabulary_category.id},
         # N
+        {english: 'noun', spanish: 'nombre', category_id:vocabulary_category.id},
         # O
         # P
         # Q
@@ -149,7 +169,7 @@ words = Word.create([
         # V
         {english: 'Vietnamese', spanish: 'vietnamita', category_id:vocabulary_category.id},
         # W
-        {english: 'wine', spanish: '', category_id:vocabulary_category.id},
+        {english: 'wine', spanish: 'vino', category_id:vocabulary_category.id},
         # X
         # Y
         {english: 'year', spanish: 'el año', category_id:vocabulary_category.id}
