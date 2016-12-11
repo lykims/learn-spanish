@@ -53,6 +53,19 @@
                             <div class="title">Log Out</div>
                         <% end %>
                     </li>
+                <% else %>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <%= active_link_to login_path, :action => 'go' do %>
+                            <div class="icon"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Log In</div>
+                        <% end %>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <%= active_link_to signup_path, :action => 'go' do %>
+                            <div class="icon"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i></div>
+                            <div class="title">Sign Up</div>
+                        <% end %>
+                    </li>
                 <% end %>
             </ul>
         </div>
