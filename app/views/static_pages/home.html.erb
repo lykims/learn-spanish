@@ -3,3 +3,68 @@
     <h1>Home</h1>
 </div>
 <%= render 'shared/flash' %>
+<div class="row">
+<div class="box-container col-xs-12 col-sm-6 col-md-3">
+    <div class="box-shadow">
+        <div class="pull-left">
+            <i class="fa fa-users fa-fw fa-3x" style="color:#3498DB;" aria-hidden="true"></i>
+        </div>
+        <h4 class="no-margin bold">Users</h4>
+        <h3 class="stats no-margin"><%= @users_count %></h3>
+    </div>
+</div>
+
+<div class="box-container col-xs-12 col-sm-6 col-md-3">
+    <div class="box-shadow">
+        <div class="pull-left">
+            <i class="fa fa-book fa-fw fa-3x" style="color:#F09D30;" aria-hidden="true"></i>
+        </div>
+        <h4 class="no-margin bold">Vocabulary Words</h4>
+        <h3 class="stats no-margin"><%= @words_count %></h3>
+    </div>
+</div>
+</div>
+
+<div class="row">
+<div class="box-container col-xs-12 col-sm-6">
+    <div class="box-shadow">
+        <h4 class="bold center">Words Count</h4>
+        <canvas id="vocCategoriesChart" width="350" height="350"></canvas>
+    </div>
+</div>
+</div>
+
+<script>
+var doughnutChart = new Chart(document.getElementById("vocCategoriesChart"), {
+    type: 'doughnut',
+    data: {
+        labels: [
+            "Greetings",
+            "Calendar",
+            "Numbers",
+            "Other"
+        ],
+        datasets: [
+            {
+                data: [
+                    <%= @greetings_words_count %>,
+                    <%= @calendar_words_count %>,
+                    <%= @numbers_words_count %>,
+                    <%= @other_voc_words_count %>
+                ],
+                backgroundColor: [
+                    "#58C45A",
+                    "#36A2EB",
+                    "#FFCE56",
+                    "#ED5151"
+                ],
+                hoverBackgroundColor: [
+                    "#58C45A",
+                    "#36A2EB",
+                    "#FFCE56",
+                    "#ED5151"
+                ]
+            }]
+    }
+});
+</script>

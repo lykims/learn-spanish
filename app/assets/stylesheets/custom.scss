@@ -63,6 +63,10 @@ a {
     text-align: right;
 }
 
+.bold {
+    font-weight: 500;
+}
+
 .no-margin {
     margin: 0 !important;
 }
@@ -100,7 +104,11 @@ a {
         border-radius: 3px;
         box-sizing: border-box;
 
-        input[type=text] {
+        &[type=submit] {
+            border-radius: 0;
+        }
+
+        &[type=text] {
             width: 100%;
             height: auto;
         }

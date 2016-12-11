@@ -1,5 +1,17 @@
 $(function() {
     $('.navbar-collapse ul li a').click(function() {
-      $('.navbar-toggle:visible').click();
-  });
+        $('.navbar-toggle:visible').click();
+    });
+
+    $('.stats').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+                duration: 1000,
+                easing: 'swing',
+                step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
 });

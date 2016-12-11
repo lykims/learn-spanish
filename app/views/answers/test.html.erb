@@ -5,15 +5,6 @@
     </h1>
 </div>
 
-<div class="new-word-container box-shadow">
-    <% if @progress_percentage == 100 %>
-        <div class="alert alert-success">
-            Congratulations! You've completed this section. You can still practice.
-        </div>
-    <% end %>
-    Set your keyboard layout to type the following characters: á, é, í, ó, ú, ü, ñ
-</div>
-
 <%= form_for(@word_answer, url: submitword_path, :html => { :class => "app-form new-word-container new-word-form box-shadow" } ) do |f| %>
     <div>
         <%= render 'shared/flash' %>
@@ -31,3 +22,14 @@
         </div>
     </div>
 <% end %>
+
+<div class="new-word-container">
+    <div class="alert alert-info">
+        Set your keyboard layout to type the following characters: á, é, í, ó, ú, ü, ñ
+    </div>
+    <% if @progress_percentage == 100 %>
+        <div class="alert alert-success">
+            Congratulations! You've completed this section. You can still practice.
+        </div>
+    <% end %>
+</div>

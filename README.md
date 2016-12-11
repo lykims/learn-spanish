@@ -2,7 +2,7 @@
 
 ## Objective
 
-This website was created to learn Spanish vocabulary faster in a fun way and new technologies at the same time.
+This website was created to learn Spanish vocabulary and web development tools at the same time.
 
 ## Development Tools
 
@@ -11,6 +11,7 @@ This website was created to learn Spanish vocabulary faster in a fun way and new
 * Sass
 * Bootstrap
 * Font Awesome
+* Chart.js
 
 ## Production Site
 
