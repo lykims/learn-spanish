@@ -127,8 +127,8 @@ words = Word.create([
         # B
         {english: 'bill (restaurant)', spanish: 'la nota', category_id:vocabulary_category.id},
         {english: 'buy', spanish: 'comprar', category_id:vocabulary_category.id, english_prefix: 'to'},
-        {english: 'beach', spanish: 'playa', category_id:vocabulary_category.id},
-        {english: 'beer', spanish: 'cerveza', category_id:vocabulary_category.id},
+        {english: 'beach', spanish: 'la playa', category_id:vocabulary_category.id},
+        {english: 'beer', spanish: 'la cerveza', category_id:vocabulary_category.id},
         # C
         {english: 'Canada', spanish: 'Canadá', category_id:vocabulary_category.id},
         {english: 'Canadian', spanish: 'canadiense', category_id:vocabulary_category.id},
@@ -138,14 +138,15 @@ words = Word.create([
         # E
         {english: 'eat', spanish: 'comer', category_id:vocabulary_category.id},
         # F
-        {english: 'friend', spanish: 'amigo', category_id:vocabulary_category.id},
+        {english: 'friend', spanish: 'el amigo', category_id:vocabulary_category.id},
         {english: 'feminine', spanish: 'femenino', category_id:vocabulary_category.id},
         {english: 'for', spanish: 'para', category_id:vocabulary_category.id},
-        {english: 'food', spanish: 'comida', category_id:vocabulary_category.id},
+        {english: 'food', spanish: 'la comida', category_id:vocabulary_category.id},
         # G
         {english: 'go', spanish: 'ir', category_id:vocabulary_category.id, english_prefix: 'to'},
         # H
         {english: 'help', spanish: 'ayudar', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'here', spanish: 'aquí', category_id:vocabulary_category.id, english_prefix: 'to'},
         # I
         # J
         # K
@@ -155,9 +156,13 @@ words = Word.create([
         # M
         {english: 'masculine', spanish: 'masculino', category_id:vocabulary_category.id},
         # N
-        {english: 'noun', spanish: 'nombre', category_id:vocabulary_category.id},
+        {english: 'noun', spanish: 'el nombre', category_id:vocabulary_category.id},
         # O
         # P
+        {english: 'practice', spanish: 'practicar', category_id:vocabulary_category.id},
+        {english: 'place', spanish: 'el lugar', category_id:vocabulary_category.id},
+        {english: 'person', spanish: 'la persona', category_id:vocabulary_category.id},
+        {english: 'purchase', spanish: 'la compra', category_id:vocabulary_category.id},
         # Q
         # R
         {english: 'Romania', spanish: 'Rumania', category_id:vocabulary_category.id},
@@ -165,11 +170,12 @@ words = Word.create([
         {english: 'road', spanish: 'camino', category_id:vocabulary_category.id},
         # S
         # T
+        {english: 'then', spanish: 'entonces', category_id:vocabulary_category.id},
         # U
         # V
         {english: 'Vietnamese', spanish: 'vietnamita', category_id:vocabulary_category.id},
         # W
-        {english: 'wine', spanish: 'vino', category_id:vocabulary_category.id},
+        {english: 'wine', spanish: 'el vino', category_id:vocabulary_category.id},
         # X
         # Y
         {english: 'year', spanish: 'el año', category_id:vocabulary_category.id}

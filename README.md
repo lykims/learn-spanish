@@ -3,6 +3,7 @@
 ## Objective
 
 This website was created to learn Spanish vocabulary and web development tools at the same time.
+<https://lykims-learn-spanish.herokuapp.com>
 
 ## Development Tools
 
@@ -15,8 +16,29 @@ This website was created to learn Spanish vocabulary and web development tools a
 
 ## Production Site
 
+### Functionalities
 
-## Getting started
+#### By default
+* About
+* Word lists
+
+#### When the user is not logged in
+* Log In
+* Sign Up
+
+#### When the user is logged in
+* Animated statistics
+* Start Test to test knowledge about Spanish words
+* Users list with their learning progress
+* Edit Profile of his own profile only
+
+#### When the user is logged in and has the Administrator role
+* Edit Profile of all users
+* Delete any user
+* Add, Edit and Delete any word
+
+
+### Getting started
 
 To get started with the app, clone the repo and then install the needed gems:
 
