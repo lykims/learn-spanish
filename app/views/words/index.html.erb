@@ -12,17 +12,18 @@
 
 <%= render 'shared/flash' %>
 
+<% if !@first_letters.nil? %>
+    <div class="alpha-pagination">
+        <ul class="pagination">
+            <% @first_letters.each do |letter| %>
+                <li class="<%= active_class(vocabulary_words_path(letter)) %>">
+                    <%= active_link_to "#{letter}", vocabulary_words_path(letter) %>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
 <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <% if !@first_letters.nil? %>
-        <div class="alpha-pagination">
-            <ul class="pagination">
-                <% @first_letters.each do |letter| %>
-                    <li class="<%= active_class(vocabulary_words_path(letter)) %>">
-                        <%= active_link_to "#{letter}", vocabulary_words_path(letter) %>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
     <%= render 'words/words_table', :words => @words %>
 </div>
