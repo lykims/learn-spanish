@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
-    before_action :logged_in_user, only: [:new, :create, :edit, :update]
-    before_action :admin_user,     only: [:new, :create, :edit, :update]
+    before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+    before_action :admin_user,     only: [:new, :create, :edit, :update, :destroy]
 
     def index
         @first_letters = Word.joins(:category).where(categories: {name: 'Vocabulary'}).order(:english).collect{|word| word.english[0,1].upcase}.uniq.sort
@@ -72,6 +72,12 @@ class WordsController < ApplicationController
         else
             render 'edit'
         end
+    end
+
+    def destroy
+        Word.find(params[:id]).destroy
+        flash[:success] = "Word deleted"
+        redirect_to dictionary_words_url
     end
 
     private
