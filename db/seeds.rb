@@ -20,7 +20,7 @@ words = Word.create([
         {english: 'Hello', spanish: 'Hola', category_id:greetings_category.id},
         {english: 'Goodbye', spanish: 'Adiós', category_id:greetings_category.id},
         {english: 'Good morning', spanish: 'Buenos días', category_id:greetings_category.id},
-        {english: 'Good afternoon', spanish: 'Buenos tardes', category_id:greetings_category.id},
+        {english: 'Good afternoon', spanish: 'Buenas tardes', category_id:greetings_category.id},
         {english: 'Good evening', spanish: 'Buenas noches', category_id:greetings_category.id},
         {english: 'See you later', spanish: 'Hasta luego', category_id:greetings_category.id},
         {english: 'See you soon', spanish: 'Hasta pronto', category_id:greetings_category.id},
@@ -170,7 +170,7 @@ words = Word.create([
         {english: 'key', spanish: 'la llave', category_id:vocabulary_category.id},
         # L
         {english: 'like', spanish: 'gustar', category_id:vocabulary_category.id, english_prefix: 'to'},
-        {english: 'love', spanish: 'querer', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'love', spanish: 'amar', category_id:vocabulary_category.id, english_prefix: 'to'},
         {english: 'left (direction)', spanish: 'la izquierda', category_id:vocabulary_category.id},
         # M
         {english: 'masculine', spanish: 'masculino', category_id:vocabulary_category.id},
@@ -183,7 +183,7 @@ words = Word.create([
         {english: 'on', spanish: 'sobre', category_id:vocabulary_category.id},
         {english: 'office', spanish: 'la oficina', category_id:vocabulary_category.id},
         # P
-        {english: 'practice', spanish: 'practicar', category_id:vocabulary_category.id},
+        {english: 'practice', spanish: 'practicar', category_id:vocabulary_category.id, english_prefix: 'to'},
         {english: 'place', spanish: 'el lugar', category_id:vocabulary_category.id},
         {english: 'person', spanish: 'la persona', category_id:vocabulary_category.id},
         {english: 'purchase', spanish: 'la compra', category_id:vocabulary_category.id},
@@ -215,6 +215,7 @@ words = Word.create([
         {english: 'word', spanish: 'palabra', category_id:vocabulary_category.id},
         {english: 'with', spanish: 'con', category_id:vocabulary_category.id},
         {english: 'without', spanish: 'sin', category_id:vocabulary_category.id},
+        {english: 'want', spanish: 'querer', category_id:vocabulary_category.id, english_prefix: 'to'},
         # X
         {english: 'xenophobia', spanish: 'xenofobia', category_id:vocabulary_category.id},
         # Y

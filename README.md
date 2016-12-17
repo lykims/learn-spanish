@@ -29,7 +29,7 @@ This website was created to learn Spanish vocabulary and web development tools a
 
 #### When the user is logged in
 * Animated statistics
-* Start Test to test knowledge about Spanish words
+* Start Practice to test knowledge about Spanish words
 * Users list with their learning progress
 * Edit Profile of his own profile only
 
