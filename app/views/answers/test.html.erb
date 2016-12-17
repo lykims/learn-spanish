@@ -12,6 +12,7 @@
     </div>
     <%= render 'shared/error_messages' %>
     <div class="form-group">
+        <%= f.hidden_field :word_id, :value => @word_answer.word_id %>
         <%= f.hidden_field :english, :value => @word_answer.english %>
         <%= f.text_field :spanish, class: "form-input form-control", autofocus: true %>
     </div>

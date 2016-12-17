@@ -17,7 +17,8 @@ class AnswersController < ApplicationController
                 flash[:danger] = "No word found :("
                 redirect_to home_url
             else
-                @word_answer.english = word.english
+                @word_answer.word_id = word.id
+                @word_answer.english = (word.english_prefix ? word.english_prefix + ' ' : '') + word.english
             end
         else
             flash[:danger] = "No word found :("
@@ -27,9 +28,9 @@ class AnswersController < ApplicationController
 
     def submitword
         @word_answer = Answer.new(answer_params)
-        @dictionary_word = Word.find_by_english(@word_answer.english)
+        puts @word_answer
+        @dictionary_word = Word.find_by_id(@word_answer.word_id)
         if @dictionary_word && @word_answer && defined?(@word_answer.spanish) && @word_answer.spanish.downcase == @dictionary_word.spanish.downcase
-            @word_answer.word_id = @dictionary_word.id
             @word_answer.user_id = current_user.id
             @word_answer.save
             redirect_to test_path(params[:category])
@@ -41,6 +42,6 @@ class AnswersController < ApplicationController
 
     private
         def answer_params
-            params.require(:answer).permit(:english, :spanish)
+            params.require(:answer).permit(:word_id, :english, :spanish)
         end
 end
