@@ -1,3 +1,5 @@
+require "i18n"
+
 class AnswersController < ApplicationController
     before_action :logged_in_user
 
@@ -30,7 +32,7 @@ class AnswersController < ApplicationController
         @word_answer = Answer.new(answer_params)
         puts @word_answer
         @dictionary_word = Word.find_by_id(@word_answer.word_id)
-        if @dictionary_word && @word_answer && defined?(@word_answer.spanish) && @word_answer.spanish.downcase == @dictionary_word.spanish.downcase
+        if @dictionary_word && @word_answer && defined?(@word_answer.spanish) && I18n.transliterate(@word_answer.spanish.downcase) == I18n.transliterate(@dictionary_word.spanish.downcase)
             @word_answer.user_id = current_user.id
             @word_answer.save
             redirect_to test_path(params[:category])

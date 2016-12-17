@@ -71,3 +71,5 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'baby_squeel'
 
 gem 'chart-js-rails'
+
+gem 'i18n', '~> 0.7.0'
