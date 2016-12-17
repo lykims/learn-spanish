@@ -157,10 +157,10 @@ words = Word.create([
         {english: 'go out', spanish: 'salir', category_id:vocabulary_category.id, english_prefix: 'to'},
         # H
         {english: 'help', spanish: 'ayudar', category_id:vocabulary_category.id, english_prefix: 'to'},
-        {english: 'here', spanish: 'aquí', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'here', spanish: 'aquí', category_id:vocabulary_category.id},
         {english: 'hot', spanish: 'caliente', category_id:vocabulary_category.id},
         {english: 'hike', spanish: 'ir de excursión', category_id:vocabulary_category.id, english_prefix: 'to'},
-        {english: 'house', spanish: 'casa', category_id:vocabulary_category.id, english_prefix: 'to'},
+        {english: 'house', spanish: 'casa', category_id:vocabulary_category.id},
         # I
         {english: 'invite', spanish: 'invitar', category_id:vocabulary_category.id, english_prefix: 'to'},
         {english: 'invite (noun)', spanish: 'la invitación', category_id:vocabulary_category.id},
