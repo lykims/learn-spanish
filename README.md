@@ -75,3 +75,4 @@ $ rails server
 * <https://www.railstutorial.org/book>
 * <http://docs.railsbridge.org>
 * <https://unsplash.com/> for free high-resolution photos
+* <https://pixabay.com> for free high-resolution photos
