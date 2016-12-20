@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     delete  '/logout',  to: 'sessions#destroy'
     get     '/test/:category',  to: 'answers#test', as: 'test'
     post    '/test/:category',  to: 'answers#submitword', as: 'submitword'
+    get     '/learners',    to: 'users#index'
     resources :users
     resources :words do
         collection do

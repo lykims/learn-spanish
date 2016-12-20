@@ -51,7 +51,6 @@ class WordsController < ApplicationController
 
     def create
         @word = Word.new(word_params)
-        puts @word
         if @word.save
             flash[:success] = "New word succesfully added!"
             redirect_to home_url

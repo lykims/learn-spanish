@@ -30,7 +30,6 @@ class AnswersController < ApplicationController
 
     def submitword
         @word_answer = Answer.new(answer_params)
-        puts @word_answer
         @dictionary_word = Word.find_by_id(@word_answer.word_id)
         if @dictionary_word && @word_answer && defined?(@word_answer.spanish) && I18n.transliterate(@word_answer.spanish.downcase) == I18n.transliterate(@dictionary_word.spanish.downcase)
             @word_answer.user_id = current_user.id
