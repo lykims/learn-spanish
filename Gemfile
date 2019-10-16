@@ -73,3 +73,5 @@ gem 'baby_squeel'
 gem 'chart-js-rails'
 
 gem 'i18n', '~> 0.7.0'
+
+gem 'nokogiri', '>= 1.10.4'
