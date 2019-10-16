@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3', '< 1.4'
 end
 # Use PostgreSQL as the database for Heroku
 group :production do
@@ -73,5 +73,3 @@ gem 'baby_squeel'
 gem 'chart-js-rails'
 
 gem 'i18n', '~> 0.7.0'
-
-gem 'nokogiri', '>= 1.10.4'
