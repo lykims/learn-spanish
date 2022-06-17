@@ -77,7 +77,7 @@ GEM
       sass (>= 3.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (0.7.0)
+    i18n (0.8.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     join_dependency (0.1.4)
@@ -198,7 +198,7 @@ DEPENDENCIES
   chart-js-rails
   coffee-rails (~> 4.2)
   font-awesome-sass (~> 4.7.0)
-  i18n (~> 0.7.0)
+  i18n (~> 0.8.0)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

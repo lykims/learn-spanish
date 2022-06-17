@@ -72,4 +72,4 @@ gem 'baby_squeel'
 
 gem 'chart-js-rails'
 
-gem 'i18n', '~> 0.7.0'
+gem 'i18n', '~> 0.8.0'
